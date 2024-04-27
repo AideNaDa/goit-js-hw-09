@@ -1,25 +1,90 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url('./base.css');
+@import url("../../node_modules/simplelightbox/dist/simple-lightbox.min.css");
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+/* GALLERY */
+
+.sl-overlay{
+  background-color: #2E2F42;
+}
+
+.sl-wrapper .sl-counter,
+.sl-wrapper .sl-navigation button,
+.sl-wrapper .sl-close   {
+  color: white;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1128px;
+  gap: 24px 24px;
+  margin: 24px auto;
+}
+
+.gallery-image{
+  width: 320px;
+  height: 200px;
+}
+
+.modal-img{
+  display: block;
+  
+  width: 1112px;
+  height: 640px;
+}
+
+/* FORM */
+
+button[type="submit"] {
+  margin-top: 16px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  color: white;
+  background: #4e75ff;
+}
+
+button[type="submit"]:hover {
+  background: #6c8cff;
+}
+
+.feedback-form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.feedback-form input[type="email"],
+.feedback-form textarea {
+  width: 360px; 
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #808080;
+  border-radius: 3.5px;
+  padding: 0 10px;
   font-size: 16px;
-  line-height: 24px;
+  font-family: var(--font-family);
   font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.feedback-form textarea{
+  height: 80px;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family); /* Вказуємо власну шрифтову сім'ю */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
 }
