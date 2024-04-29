@@ -23,19 +23,23 @@ function validateForm() {
   return true;
 }
 
-document.querySelector('.feedback-form').addEventListener('input', (event) => {
-  const { name, value } = event.target;
-  formData[name] = value;
-  saveData();
-});
+document.addEventListener("DOMContentLoaded", () => {
+  loadData();
 
-document.querySelector('.feedback-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (validateForm()) {
-    console.log(formData);
-    localStorage.removeItem("feedback-form-state");
-    formData = { email: "", message: "" };
-    document.querySelector('input[name="email"]').value = "";
-    document.querySelector('textarea[name="message"]').value = "";
-  }
+  document.querySelector('.feedback-form').addEventListener('input', (event) => {
+    const { name, value } = event.target;
+    formData[name] = value;
+    saveData();
+  });
+
+  document.querySelector('.feedback-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      console.log(formData);
+      localStorage.removeItem("feedback-form-state");
+      formData = { email: "", message: "" };
+      document.querySelector('input[name="email"]').value = "";
+      document.querySelector('textarea[name="message"]').value = "";
+    }
+  });
 });
