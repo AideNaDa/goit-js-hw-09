@@ -26,12 +26,19 @@ function validateForm() {
 document.addEventListener("DOMContentLoaded", () => {
   loadData();
 
+  // Збереження даних при введенні
   document.querySelector('.feedback-form').addEventListener('input', (event) => {
     const { name, value } = event.target;
     formData[name] = value;
     saveData();
   });
 
+  // Збереження даних перед оновленням сторінки або закриттям вкладки
+  window.addEventListener("beforeunload", () => {
+    saveData();
+  });
+
+  // Відправка форми
   document.querySelector('.feedback-form').addEventListener('submit', (event) => {
     event.preventDefault();
     if (validateForm()) {
