@@ -81,7 +81,7 @@ button[type="submit"]:hover {
 .feedback-form label {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-family); /* Вказуємо власну шрифтову сім'ю */
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
